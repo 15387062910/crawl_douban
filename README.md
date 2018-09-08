@@ -16,9 +16,12 @@
 
 ### 项目目录说明
 * cached 缓存页面
+* data 存储爬取的数据
 * img 存储图片
 * models 数据模型
 * parse 解析页面
 * spider 下载页面 or 下载图片
 * main.py 项目入口程序
+* README.md 项目说明文件
+* settings.py 设置文件
 
