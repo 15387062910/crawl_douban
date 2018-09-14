@@ -28,9 +28,9 @@ def movie_from_div(div):
     m.name = e('.title').text()
     m.score = e('.rating_num').text()
     m.quote = e('.inq').text()
-    m.cover_url = e('img').attr('src')
+    m.img_url = e('img').attr('src')
     m.ranking = e('.pic').find('em').text()
-
+    m.save()
     return m
 
 

@@ -28,10 +28,10 @@ def drama_from_div(div):
     m = Drama()
     m.name = e('.title').text()
     m.score = e('.rating').find('.rating_nums').text()
-    m.cover_url = e('img').attr('src')
+    m.img_url = e('img').attr('src')
     m.ranking = e('.hd').find('.pos').text()
     m.details = e('.abstract').text()
-
+    m.save()
     return m
 
 

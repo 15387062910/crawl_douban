@@ -2,23 +2,30 @@
 # __author__ = "wyb"
 # date: 2018/9/6
 # Model类
+import os
 import json
+from settings import data_path
 
 
 # 底层的save:
 def save(data, path):
     """
-    data 是 dict 或者 list
-    path 是保存文件的路径
+    :param data: 是 dict 或者 list
+    :param path: 保存文件的路径
+    :return:
     """
-    s = json.dumps(data, indent=2, ensure_ascii=False)
-    with open(path, 'w+', encoding='utf-8') as f:
+    s = json.dumps(data, indent=2, ensure_ascii=False) + ",\n"
+    with open(path, 'a+', encoding='utf-8') as f:
         # log('save: ', path, s, data)
         f.write(s)
 
 
 # 底层的load:
 def load(path):
+    """
+    :param path: 读取文件的路径
+    :return:
+    """
     with open(path, 'r', encoding='utf-8') as f:
         s = f.read()
         # log('load: ', s)
@@ -44,6 +51,20 @@ class Model(object):
         所以我们可以得到 class 的名字
         """
         classname = cls.__name__
-        path = 'data/{}.txt'.format(classname)
+        path = '{}.txt'.format(classname)
+        path = os.path.join(data_path, path).replace('\\', '/')
         return path
+
+    def item_obj(self):
+        properties = [{k: v} for k, v in self.__dict__.items()]
+
+        return properties
+
+    def save(self):
+        """
+        用 all 方法读取文件中的所有 model 并生成一个 list
+        把 self 添加进去并且保存进文件
+        """
+        path = self.db_path()
+        save(self.item_obj(), path)
 

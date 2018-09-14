@@ -13,13 +13,13 @@ class Movie(Model):
         name -> 名字
         score -> 分数
         quote -> 名言
-        cover_url -> 路径
+        img_url -> 路径
         ranking -> 排名
         """
         self.name = ''
         self.score = 0
         self.quote = ''
-        self.cover_url = ''
+        self.img_url = ''
         self.ranking = 0
 
 

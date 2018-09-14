@@ -9,10 +9,13 @@ import os
 
 def download_image(url, floder_name, img_name):
     """
-    下载图片
-    :param url: 图片路径    floder_name: 图片存在img下的文件夹的名字
+    下载图片到指定的文件夹下
+    :param url: 图片网址
+    :param floder_name: 图片存储的子文件夹名
+    :param img_name: 图片名字
     :return:
     """
+    # folder_path: 图片存储路径   img_name: 图片存储文件名   img_path_detail: 图片存储具体地址
     folder_path = os.path.join(img_path, floder_name)
     img_name = img_name + ".jpg"
     img_path_detail = os.path.join(img_path, floder_name, img_name)
@@ -26,7 +29,8 @@ def download_image(url, floder_name, img_name):
     # 如果url不为None发送网络请求, 把结果写入到文件夹中
     if url:
         r = requests.get(url, headers)
-        with open(img_path, 'wb') as f:
+        # print(img_path)
+        with open(img_path_detail, 'wb') as f:
             f.write(r.content)
 
 
