@@ -35,7 +35,7 @@ def drama_from_div(div):
     return m
 
 
-def drama_from_url(url):
+def dramas_from_url(url):
     """
     从 url 中下载网页并解析出页面内所有的电视剧 -> 只会下载一次(通过cached_url实现)
     然后:

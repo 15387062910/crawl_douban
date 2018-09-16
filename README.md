@@ -21,7 +21,7 @@
 * models 数据模型及存储数据
 * parse 解析页面
 * spider 下载页面及图片
-* main.py 项目入口程序
+* run.py 项目入口程序 整个项目由此启动
 * README.md 项目说明文件
 * settings.py 配置文件
 
