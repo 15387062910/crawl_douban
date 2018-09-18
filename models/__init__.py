@@ -52,6 +52,8 @@ class Model(object):
         """
         classname = cls.__name__
         path = '{}.txt'.format(classname)
+        if not os.path.exists(data_path):
+            os.makedirs(data_path)
         path = os.path.join(data_path, path).replace('\\', '/')
         return path
 
@@ -62,8 +64,7 @@ class Model(object):
 
     def save(self):
         """
-        用 all 方法读取文件中的所有 model 并生成一个 list
-        把 self 添加进去并且保存进文件
+        保存文件
         """
         path = self.db_path()
         save(self.item_obj(), path)

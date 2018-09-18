@@ -54,13 +54,11 @@ def cached_url(url, name):
         folder_path = os.path.join(cached_path, folder_name)
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
-
-        headers = {
-            'user-agent': '''Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8''',
-        }
-        # 发送网络请求, 把结果写入到文件夹中
-        r = requests.get(url, headers)
-        with open(path, 'wb') as f:
-            f.write(r.content)
-        return r.content
+        try:
+            # 发送网络请求, 把结果写入到文件夹中
+            r = requests.get(url, headers)
+            with open(path, 'wb') as f:
+                f.write(r.content)
+            return r.content
+        except Exception as e:
+            print(e)

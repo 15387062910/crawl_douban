@@ -13,6 +13,11 @@
     2. parse: HTMLParser 解析页面          pyquery     lxml   (注: pyquery的用法类似前端中的CSS选择器)
     3. model: DataModel 字段 - element     业务逻辑 (自己做一个model)
 
+### 爬取页面地址
+* top250电影:     https://movie.douban.com/top250
+* top250图书:     https://book.douban.com/top250
+* top250电视剧:   https://www.douban.com/doulist/44811565/ 
+* top250音乐:     https://music.douban.com/top250
 
 ### 项目目录说明
 * cached 缓存页面
@@ -25,3 +30,5 @@
 * README.md 项目说明文件
 * settings.py 配置文件
 
+### 其他说明
+* 关于top250电视剧: top250电视剧不是官方榜单，并且其中只有93部电视剧
