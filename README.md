@@ -31,4 +31,10 @@
 * settings.py 配置文件
 
 ### 其他说明
-* 关于top250电视剧: top250电视剧不是官方榜单，并且其中只有93部电视剧
+    关于top250电视剧: 
+        top250电视剧不是官方榜单，并且其中只有93部电视剧
+    安装包:
+        安装pyquery: pip3 install pyquery
+        安装requests: pip3 install requests
+    运行:
+        直接运行项目根目录下的run.py即可
